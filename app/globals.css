@@ -1,26 +1,131 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-brand-50: #eef4ff;
+  --color-brand-100: #dbe6ff;
+  --color-brand-200: #bfd2ff;
+  --color-brand-300: #93b3fd;
+  --color-brand-400: #608cf9;
+  --color-brand-500: #3b67f3;
+  --color-brand-600: #2549e0;
+  --color-brand-700: #1d39c0;
+  --color-brand-800: #1e329b;
+  --color-brand-900: #1e2f7a;
+  --color-brand-950: #161e4a;
+
+  --color-surface: #ffffff;
+  --color-canvas: #f6f8fc;
+
+  --radius-card: 1.25rem;
+
+  --shadow-card: 0 1px 2px rgb(15 23 42 / 0.04), 0 4px 16px rgb(15 23 42 / 0.06);
+  --shadow-raised: 0 -4px 24px rgb(15 23 42 / 0.08);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+:root {
+  color-scheme: light;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-canvas);
+  color: var(--color-slate-900);
+}
+
+/* Range input styling shared by the EMI calculator */
+.range {
+  appearance: none;
+  width: 100%;
+  height: 0.5rem;
+  border-radius: 9999px;
+  background: linear-gradient(
+    to right,
+    var(--color-brand-600) 0%,
+    var(--color-brand-600) var(--fill, 0%),
+    var(--color-slate-200) var(--fill, 0%),
+    var(--color-slate-200) 100%
+  );
+  cursor: pointer;
+}
+.range::-webkit-slider-thumb {
+  appearance: none;
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 9999px;
+  background: #fff;
+  border: 6px solid var(--color-brand-600);
+  box-shadow: 0 2px 6px rgb(15 23 42 / 0.2);
+}
+.range::-moz-range-thumb {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 9999px;
+  background: #fff;
+  border: 6px solid var(--color-brand-600);
+  box-shadow: 0 2px 6px rgb(15 23 42 / 0.2);
+}
+.range:focus-visible {
+  outline: 2px solid var(--color-brand-500);
+  outline-offset: 4px;
+}
+
+/* Hide scrollbars on horizontally scrolling chip rows */
+.no-scrollbar {
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Native <dialog> used as bottom sheet */
+dialog.sheet {
+  max-width: 100%;
+  max-height: 100%;
+}
+dialog.sheet::backdrop {
+  background: rgb(15 23 42 / 0.5);
+}
+dialog.sheet[open] {
+  animation: sheet-in 220ms ease-out;
+}
+@media (min-width: 1024px) {
+  dialog.sheet[open] {
+    animation: fade-in 160ms ease-out;
+  }
+}
+@keyframes sheet-in {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  body {
+    background: #fff;
+  }
+}
+
+/* Lock page scroll while a modal sheet is open */
+html:has(dialog[open]) {
+  overflow: hidden;
 }
