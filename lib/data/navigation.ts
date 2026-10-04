@@ -84,12 +84,12 @@ export const footerNav: { title: string; items: NavItem[] }[] = [
 ];
 
 export const contactInfo = {
-  phone: "1800 123 4567",
-  phoneHref: "tel:18001234567",
-  whatsapp: "+91 90000 12345",
-  whatsappHref: "https://wa.me/919000012345",
+  phone: "9435266783",
+  phoneHref: "tel:9435266783",
+  whatsapp: "+91 9435266783",
+  whatsappHref: "https://wa.me/919435266783",
   email: "support@jonojivan.in",
   emailHref: "mailto:support@jonojivan.in",
   hours: "Mon–Sat, 9 AM – 8 PM",
-  address: "Jonojivan Services, 2nd Floor, MG Road, Bengaluru, Karnataka 560001",
+  address: "Biswanath Cahariali District Biswanath Assam Pin 784176",
 };
