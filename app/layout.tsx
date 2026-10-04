@@ -21,6 +21,9 @@ export const metadata: Metadata = {
   description:
     "Apply for personal and business loans, recharge your mobile and DTH, and pay electricity, broadband, FASTag, gas, water and other bills from one simple platform.",
   applicationName: "Jonojivan",
+  icons: {
+    icon: "/logo.png",
+  },
   openGraph: {
     type: "website",
     siteName: "Jonojivan",

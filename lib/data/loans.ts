@@ -123,6 +123,58 @@ export const loanProducts: LoanProduct[] = [
       { question: "How long does approval take?", answer: "Once documents are complete, verification typically takes a few working days." },
     ],
   },
+  {
+    slug: "micro-finance-loan",
+    name: "Micro Finance Loan",
+    shortDescription: "Quick funds up to ₹5,000",
+    heroTitle: "Micro Finance Loans for Immediate Needs",
+    heroText:
+      "Need funds urgently? Get a micro finance loan up to ₹5,000 with flexible repayment in 7-90 days. Quick approval and instant disbursement.",
+    icon: "💰",
+    overview: [
+      "Micro finance loans are designed for quick access to small amounts of funds for immediate personal or business needs.",
+      "With a simple application process and fast approval, you can get funds within days.",
+    ],
+    highlights: [
+      { label: "Loan amount", value: "₹500 – ₹5,000" },
+      { label: "Tenure", value: "7 – 90 days" },
+      { label: "Interest from", value: "3% – 9% p.a." },
+      { label: "Processing fee", value: "5%" },
+    ],
+    amount: { min: 500, max: 5000 },
+    tenureMonths: { min: 0.23, max: 3 },
+    rateFrom: 3,
+    eligibility: [
+      "Indian resident aged 18–60 years",
+      "Active bank account",
+      "Monthly income of ₹5,000 or more",
+      "Valid contact details",
+    ],
+    documents: [
+      { title: "Identity & address", items: ["Aadhaar card", "Pan card or Voter ID"] },
+      { title: "Income proof", items: ["Latest 3 months bank statement"] },
+      { title: "Others", items: ["Recent passport-size photograph"] },
+    ],
+    benefits: [
+      { icon: "⚡", title: "Instant approval", description: "Get approval in under 24 hours." },
+      { icon: "💳", title: "No collateral", description: "Borrow without any security." },
+      { icon: "🚀", title: "Quick disbursal", description: "Funds transferred to your account immediately." },
+      { icon: "📱", title: "100% digital", description: "Apply, approve and track from your phone." },
+    ],
+    process: [
+      { title: "Quick application", description: "Fill a simple online form in 2 minutes." },
+      { title: "Instant verification", description: "Verification done through your bank details." },
+      { title: "Approval", description: "Get approval decision within 24 hours." },
+      { title: "Disbursal", description: "Funds are transferred to your bank account." },
+      { title: "Repay", description: "Choose flexible repayment between 7-90 days." },
+    ],
+    faqs: [
+      { question: "How much micro finance loan can I get?", answer: "You can borrow between ₹500 to ₹5,000 depending on your income and eligibility." },
+      { question: "How long does approval take?", answer: "Micro finance loans are approved within 24 hours in most cases." },
+      { question: "Can I extend my loan duration?", answer: "Yes, you can request for an extension based on your repayment capacity and creditworthiness." },
+      { question: "What is the processing fee?", answer: "The processing fee for micro finance loans is 5% of the loan amount." },
+    ],
+  },
 ];
 
 export function getLoanProduct(slug: LoanProduct["slug"]) {
