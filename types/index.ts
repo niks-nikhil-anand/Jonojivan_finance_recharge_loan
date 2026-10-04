@@ -125,7 +125,7 @@ export interface LoanFeature {
 }
 
 export interface LoanProduct {
-  slug: "personal-loan" | "business-loan";
+  slug: "personal-loan" | "business-loan" | "micro-finance-loan";
   name: string;
   shortDescription: string;
   heroTitle: string;
